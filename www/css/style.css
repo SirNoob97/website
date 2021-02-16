@@ -1,0 +1,15 @@
+.gopher{
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.terminal{
+  padding: 10px;
+  font-family:Courier;
+  color: #CCCCCC;
+  background: #282828;
+  border-style: solid;
+  border-color: #AAAA55;
+  border-radius: 15px;
+  text-align: left;
+}
