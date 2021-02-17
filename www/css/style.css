@@ -6,7 +6,7 @@
 .terminal{
   padding: 10px;
   font-family:Courier;
-  color: #CCCCCC;
+  color: #fcfcfc;
   background: #282828;
   text-align: left;
   border-style: solid;
@@ -17,6 +17,10 @@
   border-color: #AAAA55;
 }
 
+.prompt,
+.dir{
+  font-weight: bold;
+}
 .arrow{
   color: #4e9a06;
 }
@@ -24,6 +28,15 @@
   color: #06989a;
 }
 
+a{
+  text-decoration-line: none;
+}
+.dir {
+  color: #3daee9;
+}
+.file {
+  color: #fcfcfc;
+}
 .icon {
   padding: 0px 8px 3.5px 0px;
   vertical-align: middle;
