@@ -3,9 +3,17 @@
   border-radius: 50%;
 }
 
+@font-face{
+  font-family: HackND;
+  src: url(fonts/Hack-Regular-Nerd-Font-Complete.ttf);
+}
+@font-face{
+  font-family: HackBND;
+  src: url(fonts/Hack-Bold-Nerd-Font-Complete.ttf);
+}
 .terminal{
   padding: 10px;
-  font-family:Courier;
+  font-family: HackND;
   color: #fcfcfc;
   background: #282828;
   text-align: left;
@@ -19,7 +27,7 @@
 
 .prompt,
 .dir{
-  font-weight: bold;
+  font-family: HackBND;
 }
 .arrow{
   color: #4e9a06;
@@ -37,6 +45,7 @@ a{
 .file {
   color: #fcfcfc;
 }
+
 .icon {
   padding: 0px 8px 3.5px 0px;
   vertical-align: middle;
