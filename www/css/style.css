@@ -8,8 +8,25 @@
   font-family:Courier;
   color: #CCCCCC;
   background: #282828;
+  text-align: left;
+  border-style: solid;
+  border-color: #222255;
+}
+.terminal:hover{
   border-style: solid;
   border-color: #AAAA55;
-  border-radius: 15px;
-  text-align: left;
+}
+
+.arrow{
+  color: #4e9a06;
+}
+.W{
+  color: #06989a;
+}
+
+.icon {
+  padding: 0px 8px 3.5px 0px;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
 }
