@@ -1,5 +1,7 @@
 .gopher{
-  border: 2px solid white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ffffff;
   border-radius: 50%;
 }
 
@@ -51,4 +53,15 @@ a{
   vertical-align: middle;
   width: 15px;
   height: 15px;
+}
+
+.njs{
+  display: inline-block;
+  margin-top: 5%;
+  color: #fcfcfc;
+  background-color: #000080;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FF6F54;
+  border-radius: 5px;
 }
