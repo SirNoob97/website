@@ -8,15 +8,20 @@ body {
   font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #FFFFFF; }
 
-h1 { font-size:24px; line-height: 64px; letter-spacing: 0;}
 h1 {
+  font-size:24px;
+  line-height: 64px;
+  letter-spacing: 0;
   margin-top: 0;
   margin-bottom: 16px;
   font-weight: 800; }
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-  h1 { font-size: 48px; line-height: 96px;}
+  h1 {
+    font-size: 48px;
+    line-height: 96px;
+  }
 }
 
 p {
