@@ -1,0 +1,61 @@
+version: '3.8'
+services:
+  duckdns:
+    image: ghcr.io/linuxserver/duckdns
+    container_name: duckdns
+    environment:
+      - PUID=1000 #OPTIONAL
+      - PGID=1000 #OPTIONAL
+      - TZ=Europe/Madrid #OPTIONAL
+      - SUBDOMAINS=domain.duckdns.org
+      - TOKEN=duckdns-token
+      - LOG_FILE=false #OPTIONAL
+    volumes:
+      - /config:/config #OPTIONAL need LOG_FILE=true
+    restart: always
+
+  nginx-proxy:
+    image: budry/jwilder-nginx-proxy-arm
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - certs:/etc/nginx/certs:ro
+      - confd:/etc/nginx/conf.d
+      - vhostd:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+    restart: always
+
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion:stable
+    volumes:
+      - certs:/etc/nginx/certs:rw
+      - confd:/etc/nginx/conf.d
+      - vhostd:/etc/nginx/vhost.d
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/acme.sh
+      - html:/usr/share/nginx/html
+    environment:
+      - DEFAULT_EMAIL=default@email.com #Email to notify in case of certificate renewal
+    restart: always
+
+  www:
+    image: nginx
+    ports:
+      - "80"
+    volumes:
+      - this/site/src/folder:/usr/share/nginx/html:ro
+    environment:
+      - VIRTUAL_HOST=domain,www.domain
+      - LETSENCRYPT_HOST=domain,www.domain
+      - LETSENCRYPT_EMAIL=email@email.com #Email to create the acme account and get the certificates
+    restart: always
+
+volumes:
+  certs:
+  html:
+  vhostd:
+  confd:
