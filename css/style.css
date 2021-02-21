@@ -3,6 +3,8 @@
   border-width: 2px;
   border-color: #ffffff;
   border-radius: 50%;
+  width: 25%;
+  height: 25%;
 }
 
 @font-face{
