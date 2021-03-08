@@ -8,5 +8,4 @@ function openMailer(tag) {
   var value = decode("znvygb:znegvanyq467@tznvy.pbz");
   tag.setAttribute("href", value);
   tag.setAttribute("onclick", "");
-  tag.firstChild.nodeValue = "I dont like spam bots";
 }
