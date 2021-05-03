@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-site
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-site
+  template:
+    metadata:
+      labels:
+        app: web-site
+    spec:
+      containers:
+        - name: nginx
+          image: sirnoob/my-website
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-site-svc
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 9090
+      targetPort: 8080
+      nodePort: 30000
+  selector:
+    app: web-site
+
