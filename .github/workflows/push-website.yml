@@ -16,7 +16,7 @@ jobs:
         uses: crazy-max/ghaction-docker-meta@v2
         id: meta
         with:
-          images: ${{ secrets.DK_USERNAME }}/web-site
+          images: ${{ secrets.DK_USERNAME }}/website
           tags: |
             type=ref,event=tag
             type=semver,pattern={{raw}}
