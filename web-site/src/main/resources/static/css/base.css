@@ -1,0 +1,39 @@
+html {
+  font-size: 100%; }
+body {
+  background-color: #232627;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFFFFF; }
+
+h1 {
+  font-size:24px;
+  line-height: 64px;
+  letter-spacing: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 800; }
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 {
+    font-size: 48px;
+    line-height: 96px;
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+a {
+  color: #0085FF; }
+a:hover {
+  color: #0085FF; }
+
+button,
+.button {
+  margin-bottom: 1rem; }
