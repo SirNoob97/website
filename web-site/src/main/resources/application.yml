@@ -1,0 +1,5 @@
+spring:
+  lifecycle:
+    timeout-per-shutdown-pahse: 15s
+server:
+  shutdown: "graceful"
