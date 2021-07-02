@@ -7,20 +7,20 @@
 
   <title>SirNoob97</title>
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/grid.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="icon" type="image/png" href="img/gopher.png">
+  <link rel="stylesheet" th:href="@{/css/normalize.css}">
+  <link rel="stylesheet" th:href="@{/css/grid.css}">
+  <link rel="stylesheet" th:href="@{/css/base.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="icon" type="image/png" th:href="@{/img/gopher.png}">
 
-  <script type="text/javascript" src="js/email.js"></script>
+  <script type="text/javascript" th:src="@{/js/email.js}"></script>
 </head>
 
 <body>
   <div class="container">
     <div class="row">
       <div class="column" style="margin-top: 10%">
-        <img class="gopher" src="img/gopher.png" alt="Me in gopher version">
+        <img class="gopher" th:src="@{/img/gopher.png}" alt="Me in gopher version">
         <h1>Mart&iacute;n L&oacute;pez</h1>
         <p>Hello. This is a simple website where you will find my resumes, some links to get to know me, and a list of my favorite personal projects.</p>
         <div class="terminal">
