@@ -12,7 +12,6 @@ import org.springframework.web.method.HandlerTypePredicate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.util.pattern.PathPatternParser;
 import org.thymeleaf.spring5.SpringTemplateEngine;
@@ -23,7 +22,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 @EnableWebMvc
 public class Web implements ApplicationContextAware, WebMvcConfigurer {
 
-private ApplicationContext applicationContext;
+  private ApplicationContext applicationContext;
 
   @Override
   public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -37,15 +36,9 @@ private ApplicationContext applicationContext;
   }
 
   @Override
-  public void addViewControllers(ViewControllerRegistry registry) {
-    registry.addViewController("/").setViewName("index.html");
-  }
-
-  @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    registry.addResourceHandler("img/**").addResourceLocations("/img/", "classpath:/static/");
-    registry.addResourceHandler("/css/**").addResourceLocations("/css/", "classpath:/static/");
-    registry.addResourceHandler("js/**").addResourceLocations("/js/");
+    registry.addResourceHandler("/img/**", "/css/**", "/js/**")
+            .addResourceLocations("classpath:/static/img/", "classpath:/static/css/", "classpath:/static/js/");
   }
 
   @Bean
